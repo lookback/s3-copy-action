@@ -1,0 +1,13 @@
+[user]
+    name = Jonatan Littke
+	email = jonatan.littke@gmail.com
+
+[color]
+    #ui = always
+    ui = never
+
+[core]
+    editor = vim
+    excludesfile = ~/.gitignore
+[branch]
+	autosetuprebase = always
