@@ -1,3 +1,6 @@
+*/
+!.*
+!.*/*
 .CFUserTextEncoding
 .DS_Store
 .Trash/
@@ -17,4 +20,3 @@
 .subversion/
 .viminfo.tmp
 .viminfo
-/*/
