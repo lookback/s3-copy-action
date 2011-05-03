@@ -68,7 +68,7 @@ if [ "$color_prompt" = yes ]; then
         color="4"  
 
     # Green for dev
-    elif [ "$HOSTNAME" = "06-229-V1" ]; then
+    elif [ "$HOSTNAME" = "bangbang" ]; then
         color="2"     
     
     # Red for production or unknown
