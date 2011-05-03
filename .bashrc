@@ -64,17 +64,13 @@ fi
 if [ "$color_prompt" = yes ]; then
 
     # Blue for own comp
-    if [ "$HOSTNAME" = "Tesla.local" ] || [ "$HOSTNAME" = "Tesla" ] || [ "$HOSTNAME" = "tesla.local" ] || [ "$HOSTNAME" = "tesla" ] || [ "$HOSTNAME" = "Snowstorm.local" ] || [ "$HOSTNAME" = "Snowstorm" ] || [ "$HOSTNAME" = "caramac" ] || [ "$HOSTNAME" = "caramac.local" ]; then
+    if [ "$HOSTNAME" = "Tesla.local" ] || [ "$HOSTNAME" = "Tesla" ] || [ "$HOSTNAME" = "tesla.local" ] || [ "$HOSTNAME" = "tesla" ] || [ "$HOSTNAME" = "Snowstorm.local" ] || [ "$HOSTNAME" = "Snowstorm" ]; then
         color="4"  
 
     # Green for dev
-    elif [ "$HOSTNAME" = "machine-097.d.spotify.net" ] || [ "$HOSTNAME" = "machine-077.d.spotify.net" ] || [ "$HOSTNAME" = "richard.dev.spotify.net" ] || [ "$HOSTNAME" = "carrot" ]; then
+    elif [ "$HOSTNAME" = "06-229-V1" ]; then
         color="2"     
     
-    # Yellow for testing and unstable
-    elif [ "$HOSTNAME" = "machine-084.d.spotify.net" ] || [ "$HOSTNAME" = "machine-090.d.spotify.net" ] || [ "$HOSTNAME" = "machine-081.d.spotify.net" ] || [ "$HOSTNAME" = "machine-060.d.spotify.net" ] || [ "$HOSTNAME" = "www-001.testing.spotify.net" ] || [ "$HOSTNAME" = "www-001.stable.spotify.net" ] || [ "$HOSTNAME" = "product-user-001.unstable.spotify.net" ] || [ "$HOSTNAME" = "www-001.unstable.spotify.net" ]; then
-        color="3" 
-
     # Red for production or unknown
     else
         color="1"  
@@ -148,9 +144,4 @@ if [ -f /etc/bash_completion ]; then
     . /etc/bash_completion
 fi
 
-# Open MacVim when typing 'gvim'
 function photoshop { open -a /Applications/Adobe\ Photoshop\ CS4/Adobe\ Photoshop\ CS4.app $*; }
-
-export MAGICK_HOME="$HOME/bin/ImageMagick-6.6.7"
-export PATH="$PATH:$MAGICK_HOME/bin"
-export DYLD_LIBRARY_PATH="$MAGICK_HOME/lib/"
