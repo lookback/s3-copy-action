@@ -41,6 +41,7 @@ autocmd FileType css set shiftwidth=4 tabstop=4 foldmethod=indent
 
 set fillchars=fold:\ ,vert:\|   " Avoid a long line of dashes after a fold
 set foldtext=                   " I just need the number of lines as a fold text
+set foldignore=\                " Fold everything
 
 " make sure comments in python doesn't go to the beginning of line when trying to add them
 " (http://stackoverflow.com/questions/2063175/vim-insert-mode-comments-go-to-start-of-line)
