@@ -1,4 +1,4 @@
-source .bashrc
+source /Users/littke/.bashrc
 
 ##
 # Your previous /Users/littke/.bash_profile file was backed up as /Users/littke/.bash_profile.macports-saved_2011-01-22_at_21:30:39
