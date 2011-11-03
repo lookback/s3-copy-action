@@ -7,6 +7,6 @@
 
 [core]
     editor = vim
-    excludesfile = ~/.gitignore
+    excludesfile = ~/.gitignore_global
 [branch]
 	autosetuprebase = always
