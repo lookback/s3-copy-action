@@ -138,6 +138,7 @@ alias cdiff='bash ~/src/misc/coloured_svn_diff.sh'
 alias gst='git status'
 alias gd='git diff'
 alias grep='grep --color=auto'
+alias grepc='grep -r --exclude-dir=*i18n*'
 
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
