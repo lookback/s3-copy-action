@@ -63,21 +63,40 @@ if [ "$symbolic_hostname" == ".d" ]; then
     symbolic_hostname=`hostname`
 fi
 
+# Check for the variable "env_type" in /etc/environment
+# This is used to determine the colour of the PS1.
+# Possible values: local, unstable, testing, stable or unknown
+# Update this in each machine we ssh to.
+if [ -f /etc/environment ]; then
+    source /etc/environment
+else
+    env_type="unknown"
+fi
+
 if [ "$color_prompt" = yes ]; then
 
     # Blue for own comp
-    if [ "$HOSTNAME" = "Tesla.local" ] || [ "$HOSTNAME" = "Tesla" ] || [ "$HOSTNAME" = "tesla.local" ] || [ "$HOSTNAME" = "tesla" ] || [ "$HOSTNAME" = "Snowstorm.local" ] || [ "$HOSTNAME" = "Snowstorm" ]; then
-        color="4"  
+    if [ "$HOSTNAME" = "*local*" ] || [ "$env_type" = "local" ]; then
+        color="4"
 
     # Green for dev
-    elif [ "$HOSTNAME" = "bangbang" ]; then
-        color="2"     
+    elif [ "$HOSTNAME" = "*dev.*" ] || [ "$env_type" = "unstable" ]; then
+        color="2"
+
+    # Yellow for testing
+    elif [ "$HOSTNAME" = "*testing.*" ] || [ "$env_type" = "testing" ]; then
+        color="3"
+
+    # Red for production
+    elif [ "$env_type" = "stable" ]; then
+        color="1"
     
-    # Red for production or unknown
+    # Red for unknown
     else
-        color="1"  
+        color="1"
     fi
-        PS1='${debian_chroot:+($debian_chroot)}\[\033[01;3${color}m\]\u@$symbolic_hostname\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+
+    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;3${color}m\]\u@$symbolic_hostname\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
 else
     PS1='${debian_chroot:+($debian_chroot)}\u@$symbolic_hostname:\w\$ '
 fi
