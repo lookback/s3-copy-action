@@ -46,3 +46,6 @@ filetype plugin on          " plugins are enabled
 nmap gV `[v`]
 
 au BufNewFile,BufRead *.less set filetype=less
+
+" Initialize pathogen
+call pathogen#infect() 
