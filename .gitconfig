@@ -10,3 +10,12 @@
     excludesfile = ~/.gitignore_global
 [branch]
 	autosetuprebase = always
+[alias]
+  st = status
+  ci = commit
+  br = branch
+  df = diff
+  lg = log -p
+  lol = log --graph --decorate --pretty=oneline --abbrev-commit
+  lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
+  ls = ls-files
