@@ -19,3 +19,13 @@ caption always '%{= kG}[%{G}%H%{G}][%= %{= kw}%?%-Lw%?%{R}(%{W}%n*%f%t%?(%u)%?%{
 setenv SSH_AUTH_SOCK $HOME/.ssh/ssh_auth_sock
 
 multiuser on
+
+# Make screen messages stand out a little more - black on bright green.
+sorendition "+b kG"
+
+# If a window goes unresponsive, don't block the whole session waiting for it.
+defnonblock on
+
+# Window numbering starts at 1, not 0.
+bind c screen 1
+bind 0 select 10
