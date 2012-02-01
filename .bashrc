@@ -111,6 +111,7 @@ unset color_prompt force_color_prompt
 #    ;;
 #esac
 
+
 # If this is an xterm set the title to user@host:dir
  case "$TERM" in
  xterm*|rxvt*)
@@ -143,6 +144,7 @@ export CLICOLOR=1
 export LSCOLORS=ExFxCxDxBxegedabagacad
 
 # some more ls aliases
+alias mongis='cowsay -f kitty "grattz";sleep 10'
 alias ll='ls -la'
 #alias la='ls -A'
 #alias l='ls -CF'
@@ -157,6 +159,7 @@ alias cdiff='bash ~/src/misc/coloured_svn_diff.sh'
 alias gst='git status'
 alias gd='git diff'
 alias grep='grep --color=auto'
+alias grepc='grep -r --exclude-dir=*i18n*'
 
 # Find only files relevant to the current git repo, ignoring i18n folders (!)
 alias grepc='git ls-files | grep -v "i18n" | xargs grep -s --color=auto'
