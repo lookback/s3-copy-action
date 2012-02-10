@@ -13,3 +13,5 @@
 !.screenrc
 !.irssi
 !.vim
+!.ssh/
+!.ssh/rc
