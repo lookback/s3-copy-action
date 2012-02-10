@@ -166,6 +166,11 @@ if [ -f /etc/bash_completion ]; then
     . /etc/bash_completion
 fi
 
+# enable the same thing on OS X, when installed through homebrew.
+if [ -f `brew --prefix`/etc/bash_completion ]; then
+	. `brew --prefix`/etc/bash_completion
+fi
+
 function photoshop { open -a /Applications/Adobe\ Photoshop\ CS4/Adobe\ Photoshop\ CS4.app $*; }
 
 # Make the ruby gems work from command line
