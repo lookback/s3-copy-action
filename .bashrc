@@ -169,9 +169,9 @@ if [ -f /etc/bash_completion ]; then
 fi
 
 # enable the same thing on OS X, when installed through homebrew.
-if [ -f `brew --prefix`/etc/bash_completion ]; then
-	. `brew --prefix`/etc/bash_completion
-fi
+#if [ -f `brew --prefix`/etc/bash_completion ]; then
+	#. `brew --prefix`/etc/bash_completion
+#fi
 
 function photoshop { open -a /Applications/Adobe\ Photoshop\ CS4/Adobe\ Photoshop\ CS4.app $*; }
 
