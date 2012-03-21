@@ -43,5 +43,8 @@ call pathogen#infect()          " Initialize pathogen
 au BufNewFile,BufRead *.less set filetype=less
 au BufNewFile,BufRead *.mako set filetype=mako
 
-" Initialize pathogen
-call pathogen#infect() 
+""""""""""""""""""""""""""""""
+" => Command-T
+""""""""""""""""""""""""""""""
+let g:CommandTMaxHeight = 15
+noremap <leader>y :CommandTFlush<cr>
