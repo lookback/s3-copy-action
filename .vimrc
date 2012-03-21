@@ -7,10 +7,6 @@ colorscheme desert              " this colorscheme works well both in a GUI and 
 set encoding=utf-8              " use utf-8 in Vim
 set fileencodings=utf-8,latin1  " automatically detect utf-8 and latin1
 
-" make it easier to jump in the file:
-"map <s-j> 6j                    
-"map <s-k> 6k
-
 set autoindent                  " automatically indent new lines...
 set smartindent                 " ... and be clever about it
 set expandtab                   " expand tabs to spaces...
@@ -40,10 +36,9 @@ autocmd FileType css set shiftwidth=4 tabstop=4
 " (http://stackoverflow.com/questions/2063175/vim-insert-mode-comments-go-to-start-of-line)
 autocmd FileType python setl nosmartindent
 
-filetype plugin on          " plugins are enabled
-
-" Visually select the text that was last edited/pasted
-nmap gV `[v`]
+filetype plugin on              " plugins are enabled
+nmap gV `[v`]                   " Visually select the text that was last edited/pasted
+call pathogen#infect()          " Initialize pathogen
 
 au BufNewFile,BufRead *.less set filetype=less
 au BufNewFile,BufRead *.mako set filetype=mako
