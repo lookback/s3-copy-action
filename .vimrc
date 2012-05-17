@@ -43,6 +43,8 @@ call pathogen#infect()          " Initialize pathogen
 au BufNewFile,BufRead *.less set filetype=less
 au BufNewFile,BufRead *.mako set filetype=mako
 
+noremap <leader>c :checktime<cr>
+
 """"""""""""""""""""""""""""""
 " => Command-T
 """"""""""""""""""""""""""""""
