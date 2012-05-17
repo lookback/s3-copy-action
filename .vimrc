@@ -29,6 +29,7 @@ set showcmd                     " show typed keys in the status line
 set wildmenu                    " show match for partly typed commands in the command line
 set title                       " let vim set the title of the window
 let &titlestring = expand("%:n") . "%(\ %M%)" . " @ " . hostname()  " and modify it to include the host name
+let mapleader=","
 
 autocmd FileType html set shiftwidth=4 tabstop=4
 autocmd FileType css set shiftwidth=4 tabstop=4
