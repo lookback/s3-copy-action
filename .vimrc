@@ -11,8 +11,8 @@ set autoindent                  " automatically indent new lines...
 set smartindent                 " ... and be clever about it
 set expandtab                   " expand tabs to spaces...
 set smarttab                    " ... even when indenting
-set shiftwidth=4                " indent using 2 spaces...
-set tabstop=4                   " ... because a tab is 2 spaces
+set shiftwidth=4                " indent using 4 spaces...
+set tabstop=4                   " ... because a tab is 4 spaces
 
 set number                      " display line numbers
 set ruler                       " display position of the cursor
@@ -24,6 +24,7 @@ set smartcase                   " ... unless pattern contains uppercase characte
 set incsearch                   " show match for partly typed search
 set hlsearch                    " highlight matches
 set mouse=a                     " enable mouse
+set pastetoggle=<leader>p       " when we need to paste, use <leader>p before and after
 
 set showcmd                     " show typed keys in the status line
 set wildmenu                    " show match for partly typed commands in the command line
@@ -62,6 +63,7 @@ nnoremap <silent> <Leader>l
       \ else <Bar>
       \   let w:long_line_match = matchadd('ErrorMsg', '\%>80v.\+', -1) <Bar>
       \ endif<CR>
+
 
 " When vimrc is edited, reload it
 autocmd! bufwritepost vimrc source ~/.vimrc
