@@ -10,7 +10,7 @@ defscrollback 10000
 # # dirty hack: put xterm title escapes in the hardstatus
 # # this example will yield "user@host || screen Win#:(windowtitle)
 # http://superuser.com/a/154177/26281
-defhstatus "$USER@^EH ^E:(^Et)"
+defhstatus "^EH ($USER)"
 # # now turn it off so it doesn't print in the hardstatus line
 hardstatus off
 # # and finally, use caption as a replacement hardstatus
