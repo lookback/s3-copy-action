@@ -50,7 +50,8 @@ noremap <leader>c :checktime<cr>
 """"""""""""""""""""""""""""""
 " => Command-T
 """"""""""""""""""""""""""""""
-let g:CommandTMaxHeight = 15
+let g:CommandTMaxHeight=15
+let g:CommandTAcceptSelectionSplitMap=['<CR>', '<C-g>']
 noremap <leader>y :CommandTFlush<cr>
 
 " A toggle to highlight 80 columns
