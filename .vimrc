@@ -30,6 +30,7 @@ set showcmd                     " show typed keys in the status line
 set wildmenu                    " show match for partly typed commands in the command line
 set title                       " let vim set the title of the window
 let &titlestring = expand("%:n") . "%(\ %M%)" . " @ " . hostname()  " and modify it to include the host name
+let mapleader=","
 
 autocmd FileType html set shiftwidth=4 tabstop=4
 autocmd FileType css set shiftwidth=4 tabstop=4
@@ -67,3 +68,26 @@ nnoremap <silent> <Leader>l
 
 " When vimrc is edited, reload it
 autocmd! bufwritepost vimrc source ~/.vimrc
+
+" Swap two windows keeping the same window layout
+function! MarkWindowSwap()
+    let g:markedWinNum = winnr()
+endfunction
+
+function! DoWindowSwap()
+    "Mark destination
+    let curNum = winnr()
+    let curBuf = bufnr( "%" )
+    exe g:markedWinNum . "wincmd w"
+    "Switch to source and shuffle dest->source
+    let markedBuf = bufnr( "%" )
+    "Hide and open so that we aren't prompted and keep history
+    exe 'hide buf' curBuf
+    "Switch to dest and shuffle source->dest
+    exe curNum . "wincmd w"
+    "Hide and open so that we aren't prompted and keep history
+    exe 'hide buf' markedBuf 
+endfunction
+
+nmap <silent> <leader>mw :call MarkWindowSwap()<CR>
+nmap <silent> <leader>pw :call DoWindowSwap()<CR>
