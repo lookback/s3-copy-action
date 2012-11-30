@@ -1,4 +1,5 @@
-set lines=70
-set columns=250
+colorscheme torte
 
-set guifont=Menlo:h13
+set guioptions-=T         " Remove toolbar
+set guioptions-=r         " Remove right scrollbar
+set guifont=Bitstream\ Vera\ Sans\ Mono:h14 " Smaller font
