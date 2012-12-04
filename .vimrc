@@ -50,6 +50,8 @@ au BufNewFile,BufRead *.mako set filetype=mako
 au BufNewFile,BufRead *.ko set filetype=html
 
 noremap <leader>c :checktime<cr>
+" Automatically update the path of vim to the currently edited file
+noremap <leader>d :cd %:p:h<CR>
 
 """"""""""""""""""""""""""""""
 " => Command-T
