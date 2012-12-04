@@ -47,6 +47,7 @@ call pathogen#infect()          " Initialize pathogen
 
 au BufNewFile,BufRead *.less set filetype=less
 au BufNewFile,BufRead *.mako set filetype=mako
+au BufNewFile,BufRead *.ko set filetype=html
 
 noremap <leader>c :checktime<cr>
 
