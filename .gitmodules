@@ -4,3 +4,6 @@
 [submodule ".vim/bundle/vim-easymotion"]
 	path = .vim/bundle/vim-easymotion
 	url = git://github.com/Lokaltog/vim-easymotion.git
+[submodule ".vim/bundle/autocomplpop"]
+	path = .vim/bundle/autocomplpop
+	url = https://github.com/vim-scripts/AutoComplPop
