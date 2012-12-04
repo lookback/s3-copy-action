@@ -1,8 +1,12 @@
 set nowrap
-syntax on
+syntax enable
 set background=dark
 
-colorscheme desert              " this colorscheme works well both in a GUI and a terminal
+if has('gui_running')
+    colorscheme solarized
+else
+    colorscheme desert
+endif
 
 set encoding=utf-8              " use utf-8 in Vim
 set fileencodings=utf-8,latin1  " automatically detect utf-8 and latin1
