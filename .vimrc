@@ -57,7 +57,7 @@ noremap <leader>d :cd %:p:h<CR>
 " => Command-T
 """"""""""""""""""""""""""""""
 let g:CommandTMaxHeight=15
-let g:CommandTAcceptSelectionSplitMap=['<CR>', '<C-g>']
+let g:CommandTAcceptSelectionSplitMap=['<C-CR>', '<C-g>']
 noremap <leader>y :CommandTFlush<cr>
 
 " A toggle to highlight 80 columns
