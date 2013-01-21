@@ -10,3 +10,9 @@
 [submodule ".vim/bundle/vim-colors-solarized"]
 	path = .vim/bundle/vim-colors-solarized
 	url = git://github.com/altercation/vim-colors-solarized.git
+[submodule ".vim/bundle/MatchTagAlways"]
+	path = .vim/bundle/MatchTagAlways
+	url = https://github.com/Valloric/MatchTagAlways
+[submodule ".vim/bundle/matchit"]
+	path = .vim/bundle/matchit
+	url = https://github.com/tsaleh/vim-matchit
