@@ -38,12 +38,15 @@ autocmd FileType css set shiftwidth=4 tabstop=4
 " (http://stackoverflow.com/questions/2063175/vim-insert-mode-comments-go-to-start-of-line)
 autocmd FileType python setl nosmartindent
 
-filetype plugin on              " plugins are enabled
+filetype plugin indent on              " plugins are enabled
 nmap gV `[v`]                   " Visually select the text that was last edited/pasted
 call pathogen#infect()          " Initialize pathogen
 
 au BufNewFile,BufRead *.less set filetype=less
 au BufNewFile,BufRead *.mako set filetype=mako
+
+" Treat .ko as html
+au BufReadPost *.ko set syntax=html
 
 noremap <leader>c :checktime<cr>
 

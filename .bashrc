@@ -180,3 +180,11 @@ function photoshop { open -a /Applications/Adobe\ Photoshop\ CS4/Adobe\ Photosho
 
 # Make the ruby gems work from command line
 export PATH=$PATH:/var/lib/gems/1.8/bin
+
+# Make sure shell knows where to find Node.js modules i added:
+export NODE_PATH="/usr/local/lib/node"
+# As some modules have executables also add:
+export PATH="/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/usr/local/share/npm/bin:$PATH"
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
