@@ -176,4 +176,4 @@ fi
 function photoshop { open -a /Applications/Adobe\ Photoshop\ CS4/Adobe\ Photoshop\ CS4.app $*; }
 
 # Make the ruby gems work from command line
-export PATH=$PATH:/var/lib/gems/1.8/bin
+export PATH=$PATH:/var/lib/gems/1.8/bin:/usr/local/sbin
