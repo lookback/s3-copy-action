@@ -168,6 +168,11 @@ if [ -f /etc/bash_completion ]; then
     . /etc/bash_completion
 fi
 
+# git autocomplete
+if [ -f ~/.git-completion.bash ]; then
+  . ~/.git-completion.bash
+fi
+
 # enable the same thing on OS X, when installed through homebrew.
 #if [ -f `brew --prefix`/etc/bash_completion ]; then
 	#. `brew --prefix`/etc/bash_completion
