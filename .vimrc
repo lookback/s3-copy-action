@@ -76,3 +76,6 @@ nnoremap <silent> <Leader>l
 
 " When vimrc is edited, reload it
 autocmd! bufwritepost vimrc source ~/.vimrc
+
+" Automatically remove all trailing whitespace
+autocmd BufWritePre * :%s/\s\+$//e
