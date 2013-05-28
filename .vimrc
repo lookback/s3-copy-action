@@ -37,8 +37,11 @@ let &titlestring = expand("%:n") . "%(\ %M%)" . " @ " . hostname()  " and modify
 
 set iskeyword+=-                " include a dash for autocompletion so that border-box is considered one word
 
-autocmd FileType html set shiftwidth=4 tabstop=4
-autocmd FileType css set shiftwidth=4 tabstop=4
+autocmd FileType html set shiftwidth=2 tabstop=2
+autocmd FileType js set shiftwidth=2 tabstop=2
+autocmd FileType less set shiftwidth=2 tabstop=2
+filetype indent on
+
 " make sure comments in python doesn't go to the beginning of line when trying to add them
 " (http://stackoverflow.com/questions/2063175/vim-insert-mode-comments-go-to-start-of-line)
 autocmd FileType python setl nosmartindent
@@ -79,3 +82,9 @@ autocmd! bufwritepost vimrc source ~/.vimrc
 
 " Automatically remove all trailing whitespace
 autocmd BufWritePre * :%s/\s\+$//e
+
+" Faster window navigation
+map <C-j> <C-W>j
+map <C-k> <C-W>k
+map <C-h> <C-W>h
+map <C-l> <C-W>l
