@@ -12,3 +12,8 @@ export PATH=$PATH:/opt/local/bin:/opt/local/sbin
 export MAGICK_HOME="$HOME/bin/ImageMagick-6.6.7"
 export PATH="$PATH:$MAGICK_HOME/bin"
 export DYLD_LIBRARY_PATH="$MAGICK_HOME/lib/"
+
+# Setting PATH for Python 2.7
+# The orginal version is saved in .bash_profile.pysave
+PATH="/Library/Frameworks/Python.framework/Versions/2.7/bin:${PATH}"
+export PATH
