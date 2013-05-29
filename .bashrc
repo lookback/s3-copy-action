@@ -90,7 +90,7 @@ if [ "$color_prompt" = yes ]; then
     # Red for production
     elif [ "$env_type" = "stable" ]; then
         color="1"
-    
+
     # Red for unknown
     else
         color="1"
@@ -171,15 +171,17 @@ if [ -f /etc/bash_completion ]; then
     . /etc/bash_completion
 fi
 
+# git autocomplete
+if [ -f ~/.git-completion.bash ]; then
+  . ~/.git-completion.bash
+fi
+
 # enable the same thing on OS X, when installed through homebrew.
 #if [ -f `brew --prefix`/etc/bash_completion ]; then
 	#. `brew --prefix`/etc/bash_completion
 #fi
 
 function photoshop { open -a /Applications/Adobe\ Photoshop\ CS4/Adobe\ Photoshop\ CS4.app $*; }
-
-# Make the ruby gems work from command line
-export PATH=$PATH:/var/lib/gems/1.8/bin
 
 # Make sure shell knows where to find Node.js modules i added:
 export NODE_PATH="/usr/local/lib/node"
@@ -188,3 +190,6 @@ export PATH="/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/usr/local/shar
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
+
+# Make the ruby gems work from command line
+export PATH=$PATH:/var/lib/gems/1.8/bin:/usr/local/sbin

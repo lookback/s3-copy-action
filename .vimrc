@@ -1,8 +1,12 @@
 set nowrap
-syntax on
+syntax enable
 set background=dark
 
-colorscheme desert              " this colorscheme works well both in a GUI and a terminal
+if has('gui_running')
+    colorscheme solarized
+else
+    colorscheme desert
+endif
 
 set encoding=utf-8              " use utf-8 in Vim
 set fileencodings=utf-8,latin1  " automatically detect utf-8 and latin1
@@ -32,8 +36,13 @@ set title                       " let vim set the title of the window
 let &titlestring = expand("%:n") . "%(\ %M%)" . " @ " . hostname()  " and modify it to include the host name
 let mapleader=","
 
-autocmd FileType html set shiftwidth=4 tabstop=4
-autocmd FileType css set shiftwidth=4 tabstop=4
+set iskeyword+=-                " include a dash for autocompletion so that border-box is considered one word
+
+autocmd FileType html set shiftwidth=2 tabstop=2
+autocmd FileType js set shiftwidth=2 tabstop=2
+autocmd FileType less set shiftwidth=2 tabstop=2
+filetype indent on
+
 " make sure comments in python doesn't go to the beginning of line when trying to add them
 " (http://stackoverflow.com/questions/2063175/vim-insert-mode-comments-go-to-start-of-line)
 autocmd FileType python setl nosmartindent
@@ -44,17 +53,20 @@ call pathogen#infect()          " Initialize pathogen
 
 au BufNewFile,BufRead *.less set filetype=less
 au BufNewFile,BufRead *.mako set filetype=mako
+au BufNewFile,BufRead *.ko set filetype=html
 
 " Treat .ko as html
 au BufReadPost *.ko set syntax=html
 
 noremap <leader>c :checktime<cr>
+" Automatically update the path of vim to the currently edited file
+noremap <leader>d :cd %:p:h<CR>
 
 """"""""""""""""""""""""""""""
 " => Command-T
 """"""""""""""""""""""""""""""
 let g:CommandTMaxHeight=15
-let g:CommandTAcceptSelectionSplitMap=['<CR>', '<C-g>']
+let g:CommandTAcceptSelectionSplitMap=['<C-CR>', '<C-g>']
 noremap <leader>y :CommandTFlush<cr>
 
 " A toggle to highlight 80 columns
@@ -89,8 +101,17 @@ function! DoWindowSwap()
     "Switch to dest and shuffle source->dest
     exe curNum . "wincmd w"
     "Hide and open so that we aren't prompted and keep history
-    exe 'hide buf' markedBuf 
+    exe 'hide buf' markedBuf
 endfunction
 
 nmap <silent> <leader>mw :call MarkWindowSwap()<CR>
 nmap <silent> <leader>pw :call DoWindowSwap()<CR>
+
+" Automatically remove all trailing whitespace
+autocmd BufWritePre * :%s/\s\+$//e
+
+" Faster window navigation
+map <C-j> <C-W>j
+map <C-k> <C-W>k
+map <C-h> <C-W>h
+map <C-l> <C-W>l
