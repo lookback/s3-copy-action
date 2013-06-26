@@ -90,15 +90,15 @@ if [ "$color_prompt" = yes ]; then
     # Red for production
     elif [ "$env_type" = "stable" ]; then
         color="1"
-    
+
     # Red for unknown
     else
         color="1"
     fi
 
-    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;3${color}m\]\u@$symbolic_hostname\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;3${color}m\]\u@$symbolic_hostname\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\[\033[01;30m\]$(__git_ps1 " [%s]")\[\033[00m\]\$ '
 else
-    PS1='${debian_chroot:+($debian_chroot)}\u@$symbolic_hostname:\w\$ '
+    PS1='${debian_chroot:+($debian_chroot)}\u@$symbolic_hostname:\w$(__git_ps1 "(%s)")\$ '
 fi
 unset color_prompt force_color_prompt
 
@@ -169,8 +169,11 @@ if [ -f /etc/bash_completion ]; then
 fi
 
 # git autocomplete
-if [ -f ~/.git-completion.bash ]; then
-  . ~/.git-completion.bash
+if [ -f /Applications/Xcode.app/Contents/Developer/usr/share/git-core/git-completion.bash ]; then
+  .  /Applications/Xcode.app/Contents/Developer/usr/share/git-core/git-completion.bash
+  .  /Applications/Xcode.app/Contents/Developer/usr/share/git-core/git-prompt.sh
+elif [ -f ~/.git-completion.bash ]; then
+  .  ~/.git-completion.bash
 fi
 
 # enable the same thing on OS X, when installed through homebrew.
@@ -181,4 +184,4 @@ fi
 function photoshop { open -a /Applications/Adobe\ Photoshop\ CS4/Adobe\ Photoshop\ CS4.app $*; }
 
 # Make the ruby gems work from command line
-export PATH=$PATH:/var/lib/gems/1.8/bin:/usr/local/sbin
+export PATH=/usr/local/bin:$PATH:/var/lib/gems/1.8/bin:/usr/local/sbin
