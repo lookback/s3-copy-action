@@ -96,7 +96,7 @@ if [ "$color_prompt" = yes ]; then
         color="1"
     fi
 
-    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;3${color}m\]\u@$symbolic_hostname\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\[\033[01;30m\]$(__git_ps1 " [%s]")\[\033[00m\]\$ '
+    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;3${color}m\]\u@$symbolic_hostname\[\033[00m\]:$(__git_ps1 "\[\033[01;35m\]%s\[\033[00m\]@")\[\033[01;34m\]\w\[\033[00m\]\$ '
 else
     PS1='${debian_chroot:+($debian_chroot)}\u@$symbolic_hostname:\w$(__git_ps1 "(%s)")\$ '
 fi
