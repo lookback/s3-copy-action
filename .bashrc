@@ -90,7 +90,7 @@ if [ "$color_prompt" = yes ]; then
     # Red for production
     elif [ "$env_type" = "stable" ]; then
         color="1"
-    
+
     # Red for unknown
     else
         color="1"
@@ -181,4 +181,7 @@ fi
 function photoshop { open -a /Applications/Adobe\ Photoshop\ CS4/Adobe\ Photoshop\ CS4.app $*; }
 
 # Make the ruby gems work from command line
-export PATH=$PATH:/var/lib/gems/1.8/bin:/usr/local/sbin
+export PATH=$PATH:/var/lib/gems/1.8/bin:/usr/local/sbin:/usr/local/share/npm/bin
+
+# postgres
+export PGHOST="localhost"
