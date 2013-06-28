@@ -3,7 +3,7 @@
 	email = jonatan.littke@gmail.com
 
 [color]
-    ui = always
+    ui = auto
 
 [core]
     editor = vim
