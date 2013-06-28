@@ -51,6 +51,7 @@ nmap gV `[v`]                   " Visually select the text that was last edited/
 call pathogen#infect()          " Initialize pathogen
 
 au BufNewFile,BufRead *.less set filetype=less
+au BufNewFile,BufRead *.lessimport set filetype=less
 au BufNewFile,BufRead *.mako set filetype=mako
 au BufNewFile,BufRead *.ko set filetype=html
 
