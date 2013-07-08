@@ -97,9 +97,12 @@ map <C-l> <C-W>l
 " Make sure airline always runs
 set laststatus=2
 
+" Dont INSERT twice
+set noshowmode
+
 " We don't need to know file format and file type
 let g:airline_section_x=""
 let g:airline_section_y=""
 
 " (Somewhat) less intrusive theme
-let g:airline_theme='dark'
+let g:airline_theme='solarized'
