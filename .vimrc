@@ -81,7 +81,7 @@ nnoremap <silent> <Leader>l
 " When vimrc is edited, reload it
 autocmd! bufwritepost vimrc source ~/.vimrc
 
-" Automatically remove all trailing whitespace
+" Automatically remove all trailing whitespace when saving a file
 autocmd BufWritePre * :%s/\s\+$//e
 
 " Faster window navigation
@@ -89,3 +89,17 @@ map <C-j> <C-W>j
 map <C-k> <C-W>k
 map <C-h> <C-W>h
 map <C-l> <C-W>l
+
+""""""""""""""""""""""""""""""
+" => Airline
+""""""""""""""""""""""""""""""
+
+" Make sure airline always runs
+set laststatus=2
+
+" We don't need to know file format and file type
+let g:airline_section_x=""
+let g:airline_section_y=""
+
+" (Somewhat) less intrusive theme
+let g:airline_theme='dark'
