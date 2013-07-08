@@ -16,9 +16,3 @@
 [submodule ".vim/bundle/matchit"]
 	path = .vim/bundle/matchit
 	url = https://github.com/tsaleh/vim-matchit
-[submodule ".vim/bundle/vim-airline"]
-	path = .vim/bundle/vim-airline
-	url = https://github.com/bling/vim-airline
-[submodule ".vim/bundle/git-fugitive"]
-	path = .vim/bundle/git-fugitive
-	url = git://github.com/tpope/vim-fugitive.git
