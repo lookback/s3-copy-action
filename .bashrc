@@ -189,7 +189,7 @@ function photoshop { open -a /Applications/Adobe\ Photoshop\ CS4/Adobe\ Photosho
 # Make sure shell knows where to find Node.js modules i added:
 export NODE_PATH="/usr/local/lib/node"
 # As some modules have executables also add:
-export PATH="/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/usr/local/share/npm/bin:$PATH"
+export PATH="/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/usr/local/share/npm/bin:/usr/local/share/npm/lib:$PATH"
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
