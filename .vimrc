@@ -52,6 +52,7 @@ nmap gV `[v`]                   " Visually select the text that was last edited/
 call pathogen#infect()          " Initialize pathogen
 
 au BufNewFile,BufRead *.less set filetype=less
+au BufNewFile,BufRead *.lessimport set filetype=less
 au BufNewFile,BufRead *.mako set filetype=mako
 au BufNewFile,BufRead *.ko set filetype=html
 
@@ -107,7 +108,7 @@ endfunction
 nmap <silent> <leader>mw :call MarkWindowSwap()<CR>
 nmap <silent> <leader>pw :call DoWindowSwap()<CR>
 
-" Automatically remove all trailing whitespace
+" Automatically remove all trailing whitespace when saving a file
 autocmd BufWritePre * :%s/\s\+$//e
 
 " Faster window navigation
@@ -115,3 +116,20 @@ map <C-j> <C-W>j
 map <C-k> <C-W>k
 map <C-h> <C-W>h
 map <C-l> <C-W>l
+
+""""""""""""""""""""""""""""""
+" => Airline
+""""""""""""""""""""""""""""""
+
+" Make sure airline always runs
+set laststatus=2
+
+" Dont INSERT twice
+set noshowmode
+
+" We don't need to know file format and file type
+let g:airline_section_x=""
+let g:airline_section_y=""
+
+" (Somewhat) less intrusive theme
+let g:airline_theme='solarized'
