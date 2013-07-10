@@ -38,7 +38,7 @@ let &titlestring = expand("%:n") . "%(\ %M%)" . " @ " . hostname()  " and modify
 set iskeyword+=-                " include a dash for autocompletion so that border-box is considered one word
 
 autocmd FileType html set shiftwidth=2 tabstop=2
-autocmd FileType js set shiftwidth=2 tabstop=2
+autocmd FileType javascript set shiftwidth=2 tabstop=2
 autocmd FileType less set shiftwidth=2 tabstop=2
 filetype indent on
 
