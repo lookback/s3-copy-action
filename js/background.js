@@ -29,7 +29,7 @@ function onRequest(request, sender, sendResponse) {
 
             // Generate user scenario load script from collected requests and send
             // it to submission page.
-            var generator = new LI.UserScenarioGenerator();
+            var generator = new LI.LoadScriptGenerator();
             var load_script = generator.generateFromRequests(recorder.getRequests());
             var msg = {
                 'type': 'script-generated',

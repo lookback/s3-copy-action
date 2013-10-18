@@ -1,14 +1,14 @@
 /*
- * Chrome requests recorder class.
+ * Class to handle generation of Lua load script from recorded chrome requests.
  */
 
 (function(LI) {
     var BATCH_THREASHOLD = 1000;
 
-    LI.UserScenarioGenerator = function() {
+    LI.LoadScriptGenerator = function() {
     };
 
-    LI.UserScenarioGenerator.prototype.generateFromRequests = function(requests) {
+    LI.LoadScriptGenerator.prototype.generateFromRequests = function(requests) {
         var script = "",
             batches = [],
             batch = [],
@@ -22,13 +22,12 @@
                 if (!batches.length) {
                     batches.push(batch);
                     batch = [];
-                    last_url_time = time;
                 }
             } else {
                 batches.push(batch);
                 batch = [request];
-                last_url_time = time;
             }
+            last_url_time = time;
         });
 
         batches.forEach(function(batch) {
