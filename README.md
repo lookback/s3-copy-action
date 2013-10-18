@@ -1,4 +1,4 @@
-Load Impact Session Recorder Chrome Extension
+Load Impact User Scenario Recorder Chrome Extension
 ===========================
 
 TODO
