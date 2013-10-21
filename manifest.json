@@ -1,0 +1,30 @@
+{
+   "name": "Load Impact User Scenario Recorder",
+   "description": "Record user scenario sessions right from the browser, automatically uploaded to your Load Impact account.",
+   "version": "1.0.0",
+   "manifest_version": 2,
+   "background": {
+      "page": "background.html"
+   },
+   "browser_action": {
+      "default_icon": "img/icon-16.png",
+      "default_popup": "popup.html",
+      "default_title": "Click on the icon to view additional options."
+   },
+   "options_page": "options.html",
+   "content_security_policy": "script-src 'self' https://api.loadimpact.com; object-src 'self'",
+   "icons": {
+      "128": "img/icon-128.png",
+      "64": "img/icon-64.png",
+      "16": "img/icon-16.png"
+   },
+   "permissions": [
+      "http://*/*",
+      "https://*/*",
+      "storage",
+      "tabs",
+      "unlimitedStorage",
+      "webRequest",
+      "webRequestBlocking"
+   ]
+}
