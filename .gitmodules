@@ -22,3 +22,15 @@
 [submodule ".vim/bundle/git-fugitive"]
 	path = .vim/bundle/git-fugitive
 	url = git://github.com/tpope/vim-fugitive.git
+[submodule ".vim/bundle/vim-less"]
+	path = .vim/bundle/vim-less
+	url = git@github.com:groenewege/vim-less.git
+[submodule ".vim/bundle/vim-css-color"]
+	path = .vim/bundle/vim-css-color
+	url = git@github.com:skammer/vim-css-color.git
+[submodule ".vim/bundle/vim-osx-colorpicker"]
+	path = .vim/bundle/vim-osx-colorpicker
+	url = git@github.com:iandoe/vim-osx-colorpicker.git
+[submodule ".vim/bundle/auto-pairs"]
+	path = .vim/bundle/auto-pairs
+	url = git@github.com:jiangmiao/auto-pairs.git

@@ -91,6 +91,9 @@ map <C-k> <C-W>k
 map <C-h> <C-W>h
 map <C-l> <C-W>l
 
+" Macmeta mode for AutoPairs support (Alt becomes meta)
+set macmeta
+
 """"""""""""""""""""""""""""""
 " => Airline
 """"""""""""""""""""""""""""""
