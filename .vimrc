@@ -36,6 +36,7 @@ set title                       " let vim set the title of the window
 let &titlestring = expand("%:n") . "%(\ %M%)" . " @ " . hostname()  " and modify it to include the host name
 
 set iskeyword+=-                " include a dash for autocompletion so that border-box is considered one word
+set relativenumber              " let line numbers be calculated from the cursor position
 
 autocmd FileType html set shiftwidth=2 tabstop=2
 autocmd FileType javascript set shiftwidth=2 tabstop=2
