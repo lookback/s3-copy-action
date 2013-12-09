@@ -156,6 +156,7 @@ alias py='python '
 alias cdiff='bash ~/src/misc/coloured_svn_diff.sh'
 alias gst='git status'
 alias gd='git diff'
+alias gco='git checkout'
 alias grep='grep --color=auto'
 
 # Find only files relevant to the current git repo, ignoring i18n folders (!)
