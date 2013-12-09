@@ -27,7 +27,7 @@
 	url = git@github.com:groenewege/vim-less.git
 [submodule ".vim/bundle/vim-css-color"]
 	path = .vim/bundle/vim-css-color
-	url = git@github.com:skammer/vim-css-color.git
+	url = git@github.com:ap/vim-css-color.git
 [submodule ".vim/bundle/vim-osx-colorpicker"]
 	path = .vim/bundle/vim-osx-colorpicker
 	url = git@github.com:iandoe/vim-osx-colorpicker.git
