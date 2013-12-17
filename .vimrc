@@ -133,3 +133,6 @@ let g:airline_section_y=""
 
 " (Somewhat) less intrusive theme
 let g:airline_theme='solarized'
+
+" Pathogen
+execute pathogen#infect()
