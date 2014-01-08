@@ -37,9 +37,10 @@ let &titlestring = expand("%:n") . "%(\ %M%)" . " @ " . hostname()  " and modify
 let mapleader=","
 
 set iskeyword+=-                " include a dash for autocompletion so that border-box is considered one word
+set relativenumber              " let line numbers be calculated from the cursor position
 
 autocmd FileType html set shiftwidth=2 tabstop=2
-autocmd FileType js set shiftwidth=2 tabstop=2
+autocmd FileType javascript set shiftwidth=2 tabstop=2
 autocmd FileType less set shiftwidth=2 tabstop=2
 filetype indent on
 
@@ -117,6 +118,16 @@ map <C-k> <C-W>k
 map <C-h> <C-W>h
 map <C-l> <C-W>l
 
+" Macmeta mode for AutoPairs support (Alt becomes meta)
+if has("gui_macvim")
+    set macmeta
+endif
+
+" CodeKit compatibility
+set nobackup
+set nowritebackup
+set noswapfile
+
 """"""""""""""""""""""""""""""
 " => Airline
 """"""""""""""""""""""""""""""
@@ -133,6 +144,3 @@ let g:airline_section_y=""
 
 " (Somewhat) less intrusive theme
 let g:airline_theme='solarized'
-
-" Pathogen
-execute pathogen#infect()

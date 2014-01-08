@@ -158,6 +158,7 @@ alias py='python '
 alias cdiff='bash ~/src/misc/coloured_svn_diff.sh'
 alias gst='git status'
 alias gd='git diff'
+alias gco='git checkout'
 alias grep='grep --color=auto'
 alias grepc='grep -r --exclude-dir=*i18n*'
 
