@@ -96,11 +96,6 @@ if has("gui_macvim")
     set macmeta
 endif
 
-" CodeKit compatibility
-set nobackup
-set nowritebackup
-set noswapfile
-
 """"""""""""""""""""""""""""""
 " => Airline
 """"""""""""""""""""""""""""""
