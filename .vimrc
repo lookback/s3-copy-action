@@ -92,6 +92,9 @@ map <C-k> <C-W>k
 map <C-h> <C-W>h
 map <C-l> <C-W>l
 
+" Faster pasting in insert mode (Ctrl+F)
+inoremap <C-F> <C-R>"
+
 " Macmeta mode for AutoPairs support (Alt becomes meta)
 if has("gui_macvim")
     set macmeta
