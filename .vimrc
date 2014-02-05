@@ -55,6 +55,7 @@ au BufNewFile,BufRead *.less set filetype=less
 au BufNewFile,BufRead *.lessimport set filetype=less
 au BufNewFile,BufRead *.mako set filetype=mako
 au BufNewFile,BufRead *.ko set filetype=html
+au BufNewFile,BufRead *.html set filetype=html.mustache
 
 noremap <leader>c :checktime<cr>
 " Automatically update the path of vim to the currently edited file
@@ -117,4 +118,3 @@ let g:airline_section_y=""
 
 " (Somewhat) less intrusive theme
 let g:airline_theme='solarized'
-
