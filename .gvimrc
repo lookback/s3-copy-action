@@ -7,4 +7,4 @@ syntax enable
 set background=dark
 colorscheme solarized
 
-set transparency=15
+set transparency=0

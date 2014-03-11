@@ -200,3 +200,7 @@ export PATH=/usr/local/bin:$PATH:/var/lib/gems/1.8/bin:/usr/local/sbin:/usr/loca
 
 # postgres
 export PGHOST="localhost"
+
+# avoid bash crying about unknown locale
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
