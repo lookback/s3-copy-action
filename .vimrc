@@ -56,6 +56,7 @@ au BufNewFile,BufRead *.less set filetype=less
 au BufNewFile,BufRead *.lessimport set filetype=less
 au BufNewFile,BufRead *.mako set filetype=mako
 au BufNewFile,BufRead *.ko set filetype=html
+au BufNewFile,BufRead *.html set filetype=html.mustache
 
 " Treat .ko as html
 au BufReadPost *.ko set syntax=html
@@ -122,6 +123,14 @@ map <C-l> <C-W>l
 set nobackup
 set nowritebackup
 set noswapfile
+
+" Faster pasting in insert mode (Ctrl+F)
+inoremap <C-F> <C-R>"
+
+" Macmeta mode for AutoPairs support (Alt becomes meta)
+if has("gui_macvim")
+    set macmeta
+endif
 
 """"""""""""""""""""""""""""""
 " => Airline
