@@ -148,3 +148,6 @@ let g:airline_section_y=""
 
 " (Somewhat) less intrusive theme
 let g:airline_theme='solarized'
+
+" Bind leader e to open file in the current directory
+nnoremap <Leader>e :e <C-R>=expand('%:p:h') . '/'<CR>
