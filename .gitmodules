@@ -44,3 +44,6 @@
 # Wanted: https://github.com/Valloric/YouCompleteMe
 # Wanted: https://github.com/scrooloose/syntastic
 # Wanted: https://github.com/terryma/vim-multiple-cursors
+[submodule ".vim/bundle/vim-surround"]
+	path = .vim/bundle/vim-surround
+	url = git://github.com/tpope/vim-surround.git
