@@ -151,3 +151,6 @@ let g:airline_theme='solarized'
 
 " Bind leader e to open file in the current directory
 nnoremap <Leader>e :e <C-R>=expand('%:p:h') . '/'<CR>
+"
+" Bind leader e to open file in the current directory
+nnoremap <Leader>x :Explore<CR>
