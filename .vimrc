@@ -154,3 +154,6 @@ nnoremap <Leader>e :e <C-R>=expand('%:p:h') . '/'<CR>
 "
 " Bind leader e to open file in the current directory
 nnoremap <Leader>x :Explore<CR>
+
+" Bind ctrl-x to swap the current selection with the current paste buffer
+:vnoremap <C-X> <Esc>`.``gvP``P`
