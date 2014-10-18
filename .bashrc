@@ -204,3 +204,7 @@ export PGHOST="localhost"
 # avoid bash crying about unknown locale
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
+
+export AWS_CREDENTIAL_FILE=/Users/datacarl/.credentials/aws.txt
+
+export DOCKER_HOST=tcp://192.168.59.103:2375

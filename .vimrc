@@ -1,3 +1,5 @@
+call pathogen#infect()          " Initialize pathogen
+
 set nowrap
 syntax enable
 set background=dark
@@ -27,6 +29,7 @@ set ignorecase                  " ignore case when searching...
 set smartcase                   " ... unless pattern contains uppercase characters
 set incsearch                   " show match for partly typed search
 set hlsearch                    " highlight matches
+nnoremap <CR> :noh<CR><CR>      " remove last search highlighting by pressing enter
 set mouse=a                     " enable mouse
 set pastetoggle=<leader>p       " when we need to paste, use <leader>p before and after
 
@@ -50,7 +53,6 @@ autocmd FileType python setl nosmartindent
 
 filetype plugin indent on              " plugins are enabled
 nmap gV `[v`]                   " Visually select the text that was last edited/pasted
-call pathogen#infect()          " Initialize pathogen
 
 au BufNewFile,BufRead *.less set filetype=less
 au BufNewFile,BufRead *.lessimport set filetype=less
@@ -157,3 +159,25 @@ nnoremap <Leader>x :Explore<CR>
 
 " Bind ctrl-x to swap the current selection with the current paste buffer
 :vnoremap <C-X> <Esc>`.``gvP``P`
+
+" Easy motion
+
+map <Leader> <Plug>(easymotion-prefix)
+
+let g:EasyMotion_do_mapping = 0 " Disable default mappings
+
+" Bi-directional find motion
+" Jump to anywhere you want with minimal keystrokes, with just one key binding.
+" `s{char}{label}`
+nmap s <Plug>(easymotion-s)
+" or
+" `s{char}{char}{label}`
+" Need one more keystroke, but on average, it may be more comfortable.
+" nmap s <Plug>(easymotion-s2)
+
+" Turn on case sensitive feature
+let g:EasyMotion_smartcase = 1
+
+" JK motions: Line motions
+map <Leader>j <Plug>(easymotion-j)
+map <Leader>k <Plug>(easymotion-k)
