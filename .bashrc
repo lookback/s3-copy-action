@@ -158,7 +158,9 @@ alias py='python '
 alias cdiff='bash ~/src/misc/coloured_svn_diff.sh'
 alias gst='git status'
 alias gd='git diff'
+alias gdc='git diff --cached'
 alias gco='git checkout'
+alias gcp='git cherry-pick'
 alias grep='grep --color=auto'
 alias grepc='grep -r --exclude-dir=*i18n*'
 
@@ -207,4 +209,11 @@ export LANG=en_US.UTF-8
 
 export AWS_CREDENTIAL_FILE=/Users/datacarl/.credentials/aws.txt
 
-export DOCKER_HOST=tcp://192.168.59.103:2375
+export DOCKER_HOST=tcp://192.168.59.103:2376
+export DOCKER_CERT_PATH=/Users/datacarl/.boot2docker/certs/boot2docker-vm
+export DOCKER_TLS_VERIFY=1
+
+# Measure response time of a site. #Usage: perf url
+function perf {
+  curl -o /dev/null  -s -w "%{time_connect} + %{time_starttransfer} = %{time_total}\n" "$1"
+}
