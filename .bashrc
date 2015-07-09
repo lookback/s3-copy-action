@@ -145,14 +145,13 @@ export LSCOLORS=ExFxCxDxBxegedabagacad
 
 # some more ls aliases
 alias mongis='cowsay -f kitty "grattz";sleep 10'
-alias ll='ls -la'
 #alias la='ls -A'
 #alias l='ls -CF'
 alias rm='rm -i'
 alias ssh='ssh -A'
 alias cp='cp -i'
 alias mv='mv -i'
-alias l='ls -la --color=auto'
+alias l='ls -la -G'
 alias sl='cowsay "slow down boi!";sleep 10'
 alias py='python '
 alias cdiff='bash ~/src/misc/coloured_svn_diff.sh'
@@ -213,7 +212,20 @@ export DOCKER_HOST=tcp://192.168.59.103:2376
 export DOCKER_CERT_PATH=/Users/datacarl/.boot2docker/certs/boot2docker-vm
 export DOCKER_TLS_VERIFY=1
 
+# docker connect to container
+function dc {
+  docker exec -i -t $1 /bin/bash
+}
+
+alias dps='docker ps'
+alias dim='docker images'
+
 # Measure response time of a site. #Usage: perf url
 function perf {
   curl -o /dev/null  -s -w "%{time_connect} + %{time_starttransfer} = %{time_total}\n" "$1"
+}
+
+# Measure response size #Usage: size url
+function size {
+  curl --compressed -so /dev/null $1 -w '%{size_download}'
 }
