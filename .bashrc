@@ -162,6 +162,7 @@ alias gco='git checkout'
 alias gcp='git cherry-pick'
 alias grep='grep --color=auto'
 alias grepc='grep -r --exclude-dir=*i18n*'
+alias amend='git commit -a --amend -C HEAD'
 
 # Find only files relevant to the current git repo, ignoring i18n folders (!)
 alias grepc='git ls-files | grep -v "i18n" | xargs grep -s --color=auto'
@@ -191,7 +192,7 @@ function photoshop { open -a /Applications/Adobe\ Photoshop\ CS4/Adobe\ Photosho
 # Make sure shell knows where to find Node.js modules i added:
 export NODE_PATH="/usr/local/lib/node"
 # As some modules have executables also add:
-export PATH="/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/usr/local/share/npm/bin:/usr/local/share/npm/lib:$PATH"
+export PATH="/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/usr/local/share/npm/bin:/usr/local/share/npm/lib:$PATH:/home/datacarl/bin"
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
@@ -208,18 +209,6 @@ export LANG=en_US.UTF-8
 
 export AWS_CREDENTIAL_FILE=/Users/datacarl/.credentials/aws.txt
 
-export DOCKER_HOST=tcp://192.168.59.103:2376
-export DOCKER_CERT_PATH=/Users/datacarl/.boot2docker/certs/boot2docker-vm
-export DOCKER_TLS_VERIFY=1
-
-# docker connect to container
-function dc {
-  docker exec -i -t $1 /bin/bash
-}
-
-alias dps='docker ps'
-alias dim='docker images'
-
 # Measure response time of a site. #Usage: perf url
 function perf {
   curl -o /dev/null  -s -w "%{time_connect} + %{time_starttransfer} = %{time_total}\n" "$1"
@@ -229,3 +218,31 @@ function perf {
 function size {
   curl --compressed -so /dev/null $1 -w '%{size_download}'
 }
+
+function createCSRwpw {
+  openssl genrsa -des3 -out server.key 2048
+  openssl req -new -key server.key -out server.csr
+}
+
+function createCSRwopw {
+  openssl genrsa -out server.key 2048
+  openssl req -new -key server.key -out server.csr
+}
+
+function signCSR {
+  openssl x509 -req -days 365 -in server.csr -signkey server.key -out server.crt
+}
+
+# Includes
+source ~/.bashrc_docker
+
+
+# The next line updates PATH for the Google Cloud SDK.
+source '/Users/datacarl/google-cloud-sdk/path.bash.inc'
+
+# The next line enables shell command completion for gcloud.
+source '/Users/datacarl/google-cloud-sdk/completion.bash.inc'
+
+# NVM
+export NVM_DIR=~/.nvm
+. $(brew --prefix nvm)/nvm.sh
