@@ -188,7 +188,7 @@ map <Leader>k <Plug>(easymotion-k)
 :let Grep_Skip_Dirs = '.meteor dump .build.* .build'
 
 " For greplace
-set grepprg=ack\ --nogroup\ --nocolor
+set grepprg=ack\ --nogroup\ --nocolor\ --ignore-dir=.meteor\ --ignore-dir=node_modules
 
 " Syntastic
 set statusline+=%#warningmsg#
