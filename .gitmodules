@@ -6,31 +6,31 @@
 	url = git://github.com/Lokaltog/vim-easymotion.git
 [submodule ".vim/bundle/autocomplpop"]
 	path = .vim/bundle/autocomplpop
-	url = https://github.com/vim-scripts/AutoComplPop
+	url = git@github.com:vim-scripts/AutoComplPop
 [submodule ".vim/bundle/vim-colors-solarized"]
 	path = .vim/bundle/vim-colors-solarized
 	url = git://github.com/altercation/vim-colors-solarized.git
 [submodule ".vim/bundle/MatchTagAlways"]
 	path = .vim/bundle/MatchTagAlways
-	url = https://github.com/Valloric/MatchTagAlways
+	url = git@github.com:Valloric/MatchTagAlways
 [submodule ".vim/bundle/matchit"]
 	path = .vim/bundle/matchit
-	url = https://github.com/tsaleh/vim-matchit
+	url = git@github.com:tsaleh/vim-matchit
 [submodule ".vim/bundle/vim-airline"]
 	path = .vim/bundle/vim-airline
-	url = https://github.com/bling/vim-airline
+	url = git@github.com:bling/vim-airline
 [submodule ".vim/bundle/git-fugitive"]
 	path = .vim/bundle/git-fugitive
 	url = git://github.com/tpope/vim-fugitive.git
 [submodule ".vim/bundle/vim-less"]
 	path = .vim/bundle/vim-less
-	url = https://github.com/groenewege/vim-less.git
+	url = git@github.com:groenewege/vim-less.git
 [submodule ".vim/bundle/vim-css-color"]
 	path = .vim/bundle/vim-css-color
 	url = git@github.com:ap/vim-css-color.git
 [submodule ".vim/bundle/vim-osx-colorpicker"]
 	path = .vim/bundle/vim-osx-colorpicker
-	url = https://github.com/iandoe/vim-osx-colorpicker.git
+	url = git@github.com:iandoe/vim-osx-colorpicker.git
 [submodule ".vim/bundle/auto-pairs"]
 	path = .vim/bundle/auto-pairs
 	url = git@github.com:jiangmiao/auto-pairs.git
@@ -39,11 +39,11 @@
 	url = git://github.com/mustache/vim-mustache-handlebars.git
 [submodule "/Users/littke/.vim/bundle/vim-javascript-syntax"]
 	path = /Users/littke/.vim/bundle/vim-javascript-syntax
-	url = https://github.com/jelera/vim-javascript-syntax.git
+	url = git@github.com:jelera/vim-javascript-syntax.git
 
-# Wanted: https://github.com/Valloric/YouCompleteMe
-# Wanted: https://github.com/scrooloose/syntastic
-# Wanted: https://github.com/terryma/vim-multiple-cursors
+# Wanted: git@github.com:Valloric/YouCompleteMe
+# Wanted: git@github.com:scrooloose/syntastic
+# Wanted: git@github.com:terryma/vim-multiple-cursors
 [submodule ".vim/bundle/vim-surround"]
 	path = .vim/bundle/vim-surround
 	url = git://github.com/tpope/vim-surround.git
