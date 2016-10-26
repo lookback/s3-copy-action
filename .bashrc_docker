@@ -1,0 +1,34 @@
+# Get a shell for a container
+function ds {
+  docker exec -i -t $1 /bin/bash
+}
+
+# run container
+function dr {
+  docker run -i -t $1 /bin/bash
+}
+# run detached container
+function drd {
+  docker run -d $1 /bin/bash
+}
+
+alias dps='docker ps'
+alias dim='docker images'
+
+function dme {
+  eval $(docker-machine env $1)
+  export DOCKER_HOST_IP=$(docker-machine ip $1)
+}
+
+function dmes {
+  eval $(docker-machine env --swarm $1)
+  export DOCKER_HOST_IP=$(docker-machine ip $1)
+}
+
+alias dm=docker-machine
+alias dc=docker-compose
+
+export LB_REG=dockerregistry.lookback.io:5000
+
+# Unset docker env vars (so that the client talks to docker for mac instead of a remote daemon)
+alias due=unset ${!DOCKER_*}

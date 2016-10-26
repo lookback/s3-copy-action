@@ -3,6 +3,7 @@
 !.bash_logout
 !.bash_profile
 !.bashrc
+!.bashrc_docker
 !.gitmodules
 !.gitconfig
 !.gitignore
