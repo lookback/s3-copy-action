@@ -38,7 +38,7 @@
 	path = .vim/bundle/mustache
 	url = git://github.com/mustache/vim-mustache-handlebars.git
 [submodule "/Users/littke/.vim/bundle/vim-javascript-syntax"]
-	path = /Users/littke/.vim/bundle/vim-javascript-syntax
+	path = .vim/bundle/vim-javascript-syntax
 	url = git@github.com:jelera/vim-javascript-syntax.git
 
 # Wanted: git@github.com:Valloric/YouCompleteMe
