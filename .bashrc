@@ -162,7 +162,9 @@ alias gco='git checkout'
 alias gcp='git cherry-pick'
 alias grep='grep --color=auto'
 alias grepc='grep -r --exclude-dir=*i18n*'
-alias amend='git commit -a --amend -C HEAD'
+alias amend='git commit --amend -C HEAD'
+alias amenda='git commit -a --amend -C HEAD'
+alias gsuir='git submodule update --init --recursive'
 
 # Find only files relevant to the current git repo, ignoring i18n folders (!)
 alias grepc='git ls-files | grep -v "i18n" | xargs grep -s --color=auto'
@@ -246,3 +248,5 @@ source '/Users/datacarl/google-cloud-sdk/completion.bash.inc'
 # NVM
 export NVM_DIR=~/.nvm
 . $(brew --prefix nvm)/nvm.sh
+
+export PATH="$HOME/.yarn/bin:$PATH"

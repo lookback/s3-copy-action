@@ -185,7 +185,7 @@ map <Leader>k <Plug>(easymotion-k)
 " Vim grep http://www.vim.org/scripts/script.php?script_id=311
 :let Grep_Default_Filelist = '*.js *.html *.less *.coffee'
 
-:let Grep_Skip_Dirs = '.meteor dump .build.* .build'
+:let Grep_Skip_Dirs = '.meteor dump .build.* .build *node_modules*'
 
 " For greplace
 set grepprg=ack\ --nogroup\ --nocolor\ --ignore-dir=.meteor\ --ignore-dir=node_modules
