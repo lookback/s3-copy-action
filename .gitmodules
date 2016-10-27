@@ -13,9 +13,6 @@
 [submodule ".vim/bundle/MatchTagAlways"]
 	path = .vim/bundle/MatchTagAlways
 	url = git@github.com:Valloric/MatchTagAlways
-[submodule ".vim/bundle/matchit"]
-	path = .vim/bundle/matchit
-	url = git@github.com:tmhedberg/matchit
 [submodule ".vim/bundle/vim-airline"]
 	path = .vim/bundle/vim-airline
 	url = git@github.com:bling/vim-airline
