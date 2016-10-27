@@ -15,7 +15,7 @@
 	url = git@github.com:Valloric/MatchTagAlways
 [submodule ".vim/bundle/matchit"]
 	path = .vim/bundle/matchit
-	url = git@github.com:tsaleh/vim-matchit
+	url = git@github.com:tmhedberg/vim-matchit
 [submodule ".vim/bundle/vim-airline"]
 	path = .vim/bundle/vim-airline
 	url = git@github.com:bling/vim-airline
