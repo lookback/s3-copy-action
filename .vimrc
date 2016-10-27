@@ -208,3 +208,6 @@ let g:syntastic_javascript_eslint_exe = 'node_modules/.bin/eslint'
 
 " vim-javascript
 let g:javascript_plugin_jsdoc = 1
+
+" init matchit
+runtime! macros/matchit.vim
