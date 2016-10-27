@@ -10,8 +10,8 @@
 [submodule ".vim/bundle/vim-colors-solarized"]
 	path = .vim/bundle/vim-colors-solarized
 	url = git://github.com/altercation/vim-colors-solarized.git
-[submodule ".vim/bundle/match-tag-always"]
-	path = .vim/bundle/match-tag-always
+[submodule ".vim/bundle/MatchTagAlways"]
+	path = .vim/bundle/MatchTagAlways
 	url = git@github.com:Valloric/MatchTagAlways
 [submodule ".vim/bundle/matchit"]
 	path = .vim/bundle/matchit
@@ -37,8 +37,8 @@
 [submodule ".vim/bundle/mustache"]
 	path = .vim/bundle/mustache
 	url = git://github.com/mustache/vim-mustache-handlebars.git
-[submodule ".vim/bundle/vim-javascript-syntax"]
-	path = .vim/bundle/vim-javascript-syntax
+[submodule "/Users/littke/.vim/bundle/vim-javascript-syntax"]
+	path = /Users/littke/.vim/bundle/vim-javascript-syntax
 	url = git@github.com:jelera/vim-javascript-syntax.git
 
 # Wanted: git@github.com:Valloric/YouCompleteMe
@@ -47,3 +47,6 @@
 [submodule ".vim/bundle/vim-surround"]
 	path = .vim/bundle/vim-surround
 	url = git://github.com/tpope/vim-surround.git
+[submodule ".vim/bundle/syntastic"]
+	path = .vim/bundle/syntastic
+	url = git@github.com:scrooloose/syntastic.git
