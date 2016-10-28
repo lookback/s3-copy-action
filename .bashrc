@@ -240,10 +240,14 @@ source ~/.bashrc_docker
 
 
 # The next line updates PATH for the Google Cloud SDK.
-source '/Users/datacarl/google-cloud-sdk/path.bash.inc'
+if [ -f '~/google-cloud-sdk/path.bash.inc' ]; then
+  source '~/google-cloud-sdk/path.bash.inc'
+fi
 
 # The next line enables shell command completion for gcloud.
-source '/Users/datacarl/google-cloud-sdk/completion.bash.inc'
+if [ -f  '~/google-cloud-sdk/completion.bash.inc' ]; then
+  source '~/google-cloud-sdk/completion.bash.inc'
+fi
 
 # NVM
 export NVM_DIR=~/.nvm
