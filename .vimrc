@@ -223,3 +223,9 @@ let g:javascript_plugin_jsdoc = 1
 
 " init matchit
 runtime! macros/matchit.vim
+
+" watch for changes to to config and reload the config automatically.
+augroup myvimrc
+    au!
+    au BufWritePost .vimrc,_vimrc,vimrc,.gvimrc,_gvimrc,gvimrc so $MYVIMRC | if has('gui_running') | so $MYGVIMRC | endif
+augroup END
