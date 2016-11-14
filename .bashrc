@@ -254,3 +254,7 @@ export NVM_DIR=~/.nvm
 . $(brew --prefix nvm)/nvm.sh
 
 export PATH="$HOME/.yarn/bin:$PATH"
+
+# Please better ulimit ok thx
+# http://blog.mact.me/2014/10/22/yosemite-upgrade-changes-open-file-limit
+ulimit -n 65536 65536
