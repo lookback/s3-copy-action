@@ -96,7 +96,9 @@ if [ "$color_prompt" = yes ]; then
         color="1"
     fi
 
-    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;3${color}m\]\u@$symbolic_hostname\[\033[00m\]:$(__git_ps1 "\[\033[01;35m\]%s\[\033[00m\]@")\[\033[01;34m\]\w\[\033[00m\]\$ '
+    # Post on how PS1 works in general.
+    # http://blog.superuser.com/2011/09/21/customizing-your-bash-command-prompt/
+    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;34m\]\u@$symbolic_hostname\[\033[00m\]:$(__git_ps1 "\[\033[01;35m\]%s\[\033[00m\]@")\[\033[01;34m\]\w\[\033[00m\]\$ '
 else
     PS1='${debian_chroot:+($debian_chroot)}\u@$symbolic_hostname:\w$(__git_ps1 "(%s)")\$ '
 fi
@@ -121,6 +123,44 @@ unset color_prompt force_color_prompt
      ;;
  esac
 
+# http://unix.stackexchange.com/a/152139
+###
+# Configure PS1 by using the old value but ensuring it starts on a new line.
+###
+__configure_prompt() {
+  PS1=""
+
+  if [ "$(__get_terminal_column)" != 0 ]; then
+    PS1="\n"
+  fi
+
+  PS1+="$PS1_WITHOUT_PREPENDED_NEWLINE"
+}
+
+###
+# Get the current terminal column value.
+#
+# From http://stackoverflow.com/a/2575525/549363.
+###
+__get_terminal_column() {
+  exec < /dev/tty
+  local oldstty=$(stty -g)
+  stty raw -echo min 0
+  echo -en "\033[6n" > /dev/tty
+  local pos
+  IFS=';' read -r -d R -a pos
+  stty $oldstty
+  echo "$((${pos[1]} - 1))"
+}
+
+# Save the current PS1 for later.
+PS1_WITHOUT_PREPENDED_NEWLINE="$PS1"
+
+# Use our prompt configuration function, preserving whatever existing
+# PROMPT_COMMAND might be configured.
+PROMPT_COMMAND="__configure_prompt;$PROMPT_COMMAND"
+
+# end http://unix.stackexchange.com/a/152139
 
 
 # Alias definitions.
