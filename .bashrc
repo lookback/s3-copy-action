@@ -76,19 +76,19 @@ fi
 if [ "$color_prompt" = yes ]; then
 
     # Blue for own comp
-    if [ "$HOSTNAME" = "*local*" ] || [ "$env_type" = "local" ]; then
+    if [[ "$HOSTNAME" = *"local"* ]] || [[ "$env_type" = "local" ]]; then
         color="4"
 
     # Green for dev
-    elif [ "$HOSTNAME" = "*dev.*" ] || [ "$env_type" = "unstable" ]; then
+    elif [[ "$HOSTNAME" = *"dev."* ]] || [[ "$env_type" = "unstable" ]]; then
         color="2"
 
     # Yellow for testing
-    elif [ "$HOSTNAME" = "*testing.*" ] || [ "$env_type" = "testing" ]; then
+    elif [[ "$HOSTNAME" = *"testing."* ]] || [[ "$env_type" = "testing" ]]; then
         color="3"
 
     # Red for production
-    elif [ "$env_type" = "stable" ]; then
+    elif [[ "$env_type" = *"stable"* ]]; then
         color="1"
 
     # Red for unknown
