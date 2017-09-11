@@ -17,3 +17,4 @@
 !.vim
 !.ssh/
 !.ssh/rc
+.openvpn-config

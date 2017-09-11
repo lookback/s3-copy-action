@@ -32,3 +32,6 @@ export LB_REG=dockerregistry.lookback.io:5000
 
 # Unset docker env vars (so that the client talks to docker for mac instead of a remote daemon)
 alias due=unset ${!DOCKER_*}
+
+# sync clocks with mac host
+alias dockersynctime='docker run --rm --privileged alpine hwclock -s'

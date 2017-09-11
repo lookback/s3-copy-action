@@ -207,7 +207,7 @@ alias amenda='git commit -a --amend -C HEAD'
 alias gsuir='git submodule update --init --recursive'
 
 # Find only files relevant to the current git repo, ignoring i18n folders (!)
-alias grepc='git ls-files | grep -v "i18n" | xargs grep -s --color=auto'
+alias grepc='git ls-files --recurse-submodules | grep -v "i18n" | xargs grep -s --color=auto'
 
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
@@ -290,11 +290,19 @@ if [ -f  '~/google-cloud-sdk/completion.bash.inc' ]; then
 fi
 
 # NVM
-export NVM_DIR=~/.nvm
-. $(brew --prefix nvm)/nvm.sh
+export NVM_DIR="$HOME/.nvm"
+. "/usr/local/opt/nvm/nvm.sh"
 
 export PATH="$HOME/.yarn/bin:$PATH"
 
 # Please better ulimit ok thx
 # http://blog.mact.me/2014/10/22/yosemite-upgrade-changes-open-file-limit
 ulimit -n 65536 65536
+
+# Add host(s)
+function addHosts {
+  for host in "$@"
+  do
+    ssh-keyscan -t ecdsa $host >> ~/.ssh/known_hosts
+  done
+}
