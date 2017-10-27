@@ -306,3 +306,6 @@ function addHosts {
     ssh-keyscan -t ecdsa $host >> ~/.ssh/known_hosts
   done
 }
+
+# Ansible env for lookback deploys
+export PATH=/Users/carllittke/src/lookback/lookback-ansible/lookback-ssh-agent:${PATH}
