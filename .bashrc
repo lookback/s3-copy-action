@@ -295,10 +295,6 @@ export NVM_DIR="$HOME/.nvm"
 
 export PATH="$HOME/.yarn/bin:$PATH"
 
-# Please better ulimit ok thx
-# http://blog.mact.me/2014/10/22/yosemite-upgrade-changes-open-file-limit
-ulimit -n 65536 65536
-
 # Add host(s)
 function addHosts {
   for host in "$@"
@@ -306,3 +302,6 @@ function addHosts {
     ssh-keyscan -t ecdsa $host >> ~/.ssh/known_hosts
   done
 }
+
+# Lookback ansible container
+export PATH=~/src/lookback/lookback-ansible/lookback-ssh-agent:${PATH}
