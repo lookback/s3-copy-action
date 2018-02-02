@@ -9,7 +9,7 @@
     editor = vim
     excludesfile = ~/.gitignore_global
 [branch]
-	autosetuprebase = never
+	autosetuprebase = always
 [alias]
   st = status
   ci = commit
