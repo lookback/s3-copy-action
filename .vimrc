@@ -72,6 +72,12 @@ noremap <leader>d :cd %:p:h<CR>
 """"""""""""""""""""""""""""""
 let g:CommandTMaxHeight=15
 let g:CommandTAcceptSelectionSplitMap=['<C-CR>', '<C-g>']
+let g:CommandTFileScanner="git"
+let g:CommandTGitScanSubmodules=1
+let g:CommandTGitIncludeUntracked=1
+let g:CommandTAlwaysShowDotFiles=1
+let g:CommandTScanDotDirectories=1
+
 noremap <leader>y :CommandTFlush<cr>
 
 " A toggle to highlight 80 columns
