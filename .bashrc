@@ -305,3 +305,6 @@ function addHosts {
 
 # Lookback ansible container
 export PATH=~/src/lookback/lookback-ansible/lookback-ssh-agent:${PATH}
+
+# Add Visual Studio Code (code)
+export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
