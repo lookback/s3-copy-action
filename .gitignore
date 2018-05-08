@@ -18,3 +18,4 @@
 !.ssh/
 !.ssh/rc
 !.vscode-settings.json
+!.vscode-keybindings.json
