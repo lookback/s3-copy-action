@@ -17,4 +17,5 @@
 !.vim
 !.ssh/
 !.ssh/rc
-.openvpn-config
+!.vscode-settings.json
+!.vscode-keybindings.json
