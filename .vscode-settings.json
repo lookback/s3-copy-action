@@ -1,12 +1,13 @@
 {
     "vim.disableAnnoyingNeovimMessage": true,
     "editor.lineNumbers": "relative",
-    "editor.insertSpaces": false,
     "editor.tabSize": 2,
     "editor.minimap.enabled": false,
     "workbench.editor.showTabs": false,
     "files.trimTrailingWhitespace": true,
     "files.trimFinalNewlines": true,
     "files.insertFinalNewline": true,
-    "search.useIgnoreFilesByDefault": true
+    "search.useIgnoreFilesByDefault": true,
+    "editor.fontSize": 13,
+    "window.zoomLevel": 1
 }
