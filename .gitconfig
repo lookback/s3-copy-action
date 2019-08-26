@@ -21,6 +21,7 @@
   ls = ls-files
   co = checkout
   suir = submodule update --init --recursive
+	ls-files = ls-files --recurse-submodules
 
 [push]
   default = current
