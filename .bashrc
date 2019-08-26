@@ -289,10 +289,6 @@ if [ -f  '~/google-cloud-sdk/completion.bash.inc' ]; then
   source '~/google-cloud-sdk/completion.bash.inc'
 fi
 
-# NVM
-export NVM_DIR="$HOME/.nvm"
-. "/usr/local/opt/nvm/nvm.sh"
-
 export PATH="$HOME/.yarn/bin:$PATH"
 
 # Add host(s)
@@ -308,3 +304,7 @@ export PATH=~/src/lookback/lookback-ansible/lookback-ssh-agent:${PATH}
 
 # Add Visual Studio Code (code)
 export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
