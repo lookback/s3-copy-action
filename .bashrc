@@ -4,10 +4,6 @@
 
 
 export EDITOR=vim
-export PYTHONSTARTUP=~/.pythonrc.py
-export SHELL=bash
-
-
 
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
@@ -229,18 +225,10 @@ fi
 	#. `brew --prefix`/etc/bash_completion
 #fi
 
-function photoshop { open -a /Applications/Adobe\ Photoshop\ CS4/Adobe\ Photoshop\ CS4.app $*; }
-
 # Make sure shell knows where to find Node.js modules i added:
 export NODE_PATH="/usr/local/lib/node"
 # As some modules have executables also add:
 export PATH="/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/usr/local/share/npm/bin:/usr/local/share/npm/lib:$PATH:/home/datacarl/bin"
-
-### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
-
-# Make the ruby gems work from command line
-export PATH=/usr/local/bin:$PATH:/var/lib/gems/1.8/bin:/usr/local/sbin:/usr/local/share/npm/bin
 
 # postgres
 export PGHOST="localhost"
@@ -250,16 +238,6 @@ export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
 export AWS_CREDENTIAL_FILE=/Users/datacarl/.credentials/aws.txt
-
-# Measure response time of a site. #Usage: perf url
-function perf {
-  curl -o /dev/null  -s -w "%{time_connect} + %{time_starttransfer} = %{time_total}\n" "$1"
-}
-
-# Measure response size #Usage: size url
-function size {
-  curl --compressed -so /dev/null $1 -w '%{size_download}'
-}
 
 function createCSRwpw {
   openssl genrsa -des3 -out server.key 2048
@@ -274,33 +252,6 @@ function createCSRwopw {
 function signCSR {
   openssl x509 -req -days 365 -in server.csr -signkey server.key -out server.crt
 }
-
-# Includes
-source ~/.bashrc_docker
-
-
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '~/google-cloud-sdk/path.bash.inc' ]; then
-  source '~/google-cloud-sdk/path.bash.inc'
-fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f  '~/google-cloud-sdk/completion.bash.inc' ]; then
-  source '~/google-cloud-sdk/completion.bash.inc'
-fi
-
-export PATH="$HOME/.yarn/bin:$PATH"
-
-# Add host(s)
-function addHosts {
-  for host in "$@"
-  do
-    ssh-keyscan -t ecdsa $host >> ~/.ssh/known_hosts
-  done
-}
-
-# Lookback ansible container
-export PATH=~/src/lookback/lookback-ansible/lookback-ssh-agent:${PATH}
 
 # Add Visual Studio Code (code)
 export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
