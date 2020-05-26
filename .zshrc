@@ -1,18 +1,47 @@
+### PROMPT
+
 # Load version control information
 autoload -Uz vcs_info
 autoload -U colors && colors
 precmd() { vcs_info }
 
+#https://jonasjacek.github.io/colors/
+LIGHT_BLUE=33
+
 # Format the vcs_info_msg_0_ variable
-zstyle ':vcs_info:git*' formats "%{$fg[magenta]%}%b%{$reset_color%}%{$fg[green]%}%m%u%c%{$reset_color%} "
+zstyle ':vcs_info:git*' formats "%F{magenta}%b%f%F{green}%m%u%c%f "
  
 # Set up the prompt (with git branch name)
 setopt PROMPT_SUBST
-PROMPT='%{$fg[blue]%}%n@%m%{$reset_color%}:${vcs_info_msg_0_}@%{$fg[blue]%}${PWD/#$HOME/~}%{$reset_color%}$ '
+PROMPT='%F{$LIGHT_BLUE}%n@%m%f:${vcs_info_msg_0_}@%F{$LIGHT_BLUE}${PWD/#$HOME/~}%f$ '
+
+### /PROMPT
 
 
+### ALIASES
 
-# NVM
+alias rm='rm -i'
+alias cp='cp -i'
+alias mv='mv -i'
+alias l='ls -la -G'
+alias gst='git status'
+alias gd='git diff'
+alias gdc='git diff --cached'
+alias gco='git checkout'
+alias gcp='git cherry-pick'
+alias grep='grep --color=auto'
+alias grepc='grep -r -v "i18n"'
+alias amend='git commit --amend -C HEAD'
+alias amenda='git commit -a --amend -C HEAD'
+alias gsuir='git submodule update --init --recursive'
+
+# Find only files relevant to the current git repo, ignoring i18n folders (!)
+alias grepg='git ls-files --recurse-submodules | grep -v "i18n" | xargs grep -s --color=auto'
+
+### /ALIASES
+
+
+### NVM
 
 export NVM_DIR="$HOME/.nvm"
 
@@ -21,4 +50,4 @@ export NVM_DIR="$HOME/.nvm"
 # This loads nvm bash_completion
 [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  
 
-# /NVM
+### /NVM
