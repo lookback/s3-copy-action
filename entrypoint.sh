@@ -17,9 +17,9 @@ if [ -z "$AWS_SECRET_ACCESS_KEY" ]; then
   exit 1
 fi
 
-# Default to us-east-1 if AWS_REGION not set.
+# Default to eu-west-1 if AWS_REGION not set.
 if [ -z "$AWS_REGION" ]; then
-  AWS_REGION="us-east-1"
+  AWS_REGION="eu-west-1"
 fi
 
 # Override default AWS endpoint if user sets AWS_S3_ENDPOINT.
