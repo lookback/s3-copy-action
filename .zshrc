@@ -10,10 +10,14 @@ LIGHT_BLUE=33
 
 # Format the vcs_info_msg_0_ variable
 zstyle ':vcs_info:git*' formats "%F{magenta}%b%f%F{green}%m%u%c%f "
- 
+
 # Set up the prompt (with git branch name)
 setopt PROMPT_SUBST
 PROMPT='%F{$LIGHT_BLUE}%n@%m%f:${vcs_info_msg_0_}@%F{$LIGHT_BLUE}${PWD/#$HOME/~}%f$ '
+
+# Change color of directories when running `ls -l`
+
+export LSCOLORS=ExGxBxDxCxEgEdxbxgxcxd
 
 ### /PROMPT
 
@@ -48,6 +52,22 @@ export NVM_DIR="$HOME/.nvm"
 # This loads nvm
 [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"
 # This loads nvm bash_completion
-[ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  
+[ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"
 
 ### /NVM
+
+### PYTHON
+
+# Add binaries installed via pip to PATH.
+path+=('/Users/carl/Library/Python/3.7/bin')
+export PATH
+
+### /PYTHON
+
+
+### RUST
+
+path+=('/Users/carl/.cargo/bin')
+export PATH
+
+### /RUST
