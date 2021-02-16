@@ -71,3 +71,11 @@ path+=('/Users/carl/.cargo/bin')
 export PATH
 
 ### /RUST
+
+### LQ
+
+path+=('/Users/carl/src/lookback/logquery/build.Darwin')
+export PATH
+source /Users/carl/.lq/credentials
+
+###
