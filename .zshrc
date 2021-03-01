@@ -28,7 +28,7 @@ alias rm='rm -i'
 alias cp='cp -i'
 alias mv='mv -i'
 alias l='ls -la -G'
-alias gl='git log --graph --decorate --pretty=oneline --abbrev-commit'
+alias gl='git log --graph --all --pretty=format:"%Cblue%h%Creset %s%C(yellow)%d%Creset (%Cgreen%an%Creset, %C(cyan)%ar%Creset)"'
 alias gst='git status'
 alias gd='git diff'
 alias gdc='git diff --cached'
@@ -68,4 +68,10 @@ path+=('/Users/carl/src/lookback/logquery/build.Darwin')
 export PATH
 source /Users/carl/.lq/credentials
 
-###
+### /LQ
+
+### FNM
+
+eval "$(fnm env)"
+
+### /FNM
