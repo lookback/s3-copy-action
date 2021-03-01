@@ -1,7 +1,0 @@
-[submodule "/Users/littke/.vim/bundle/vim-javascript-syntax"]
-	path = /Users/littke/.vim/bundle/vim-javascript-syntax
-	url = git@github.com:jelera/vim-javascript-syntax.git
-
-# Wanted: git@github.com:Valloric/YouCompleteMe
-# Wanted: git@github.com:scrooloose/syntastic
-# Wanted: git@github.com:terryma/vim-multiple-cursors
